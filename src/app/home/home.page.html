@@ -1,0 +1,38 @@
+<ion-header [translucent] = "true">
+    <ion-toolbar>
+      <ion-title>
+        Liga
+      </ion-title>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-tabs>
+                <ion-tab-bar slot="top">
+                  <ion-tab-button routerLink= "/jornada">
+                    <ion-icon name="calendar"></ion-icon>
+                    <ion-label>JORNADA</ion-label>
+                  </ion-tab-button>
+                </ion-tab-bar>
+            </ion-tabs>
+          </ion-col>
+            <ion-col>
+                <ion-tabs>
+                    <ion-tab-bar slot="top">
+                      <ion-tab-button routerLink = "/clasificacion">
+                        <ion-icon name="clipboard"></ion-icon>
+                        <ion-label>CLASIFICACIÓN</ion-label>
+                      </ion-tab-button>
+                    </ion-tab-bar>
+                </ion-tabs>
+                <br><br>
+          </ion-col>
+        </ion-row>
+    </ion-grid>
+    </ion-toolbar>
+  </ion-header>
+
+<ion-content>
+  <br>
+  <ion-title style="text-align: center;">Liga de Futbol</ion-title><br>
+<ion-button routerLink="/clasificacion" style="margin-left: 80px;"> EMPEZAR </ion-button>
+</ion-content>

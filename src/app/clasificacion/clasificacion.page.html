@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-tabs>
+              <ion-tab-bar slot="top">
+                <ion-tab-button routerLink= "/jornada" (click)="actualizaLiga()">
+                  <ion-icon name="calendar"></ion-icon>
+                  <ion-label>JORNADA</ion-label>
+                </ion-tab-button>
+              </ion-tab-bar>
+          </ion-tabs>
+        </ion-col>
+          <ion-col>
+              <ion-tabs>
+                  <ion-tab-bar slot="top">
+                    <ion-tab-button routerLink = "/clasificacion">
+                      <ion-icon name="clipboard"></ion-icon>
+                      <ion-label>CLASIFICACIÓN</ion-label>
+                    </ion-tab-button>
+                  </ion-tab-bar>
+              </ion-tabs>
+              <br><br>
+        </ion-col>
+      </ion-row>
+  </ion-grid>
+  <ion-item>
+  <ion-title style="text-align: center;">
+    Clasificación
+  </ion-title>
+  </ion-item>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid class="titulosClasificacion">
+    <ion-row style="text-align: center;">
+      <ion-col size="1">*</ion-col>
+      <ion-col size="4">Equipo</ion-col>
+      <ion-col size="3">Pnts</ion-col>
+      <ion-col size="2">GF</ion-col>
+      <ion-col size="2">GC</ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-row *ngFor="let equipos of arrayEquipos, index as i" style="text-align: center;">
+    <ion-col size="1">{{i+1}}</ion-col>
+    <ion-col size="4">{{equipos.nombre}}</ion-col>
+    <ion-col size="3">{{equipos.puntuacion}}</ion-col>
+     <ion-col size="2">{{equipos.golesAFavor}}</ion-col>
+     <ion-col size="2">{{equipos.golesEnContra}}</ion-col>
+  </ion-row>
+</ion-content>
+

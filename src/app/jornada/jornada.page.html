@@ -1,0 +1,68 @@
+<ion-header>
+  <ion-toolbar>
+   
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-tabs>
+              <ion-tab-bar slot="top">
+                <ion-tab-button routerLink= "/jornada">
+                  <ion-icon name="calendar"></ion-icon>
+                  <ion-label>JORNADA</ion-label>
+                </ion-tab-button>
+              </ion-tab-bar>
+          </ion-tabs>
+        </ion-col>
+          <ion-col>
+              <ion-tabs>
+                  <ion-tab-bar slot="top">
+                    <ion-tab-button routerLink = "/clasificacion">
+                      <ion-icon name="clipboard"></ion-icon>
+                      <ion-label>CLASIFICACIÓN</ion-label>
+                    </ion-tab-button>
+                  </ion-tab-bar>
+              </ion-tabs>
+              <br><br>
+        </ion-col>
+      </ion-row>
+  </ion-grid>
+  <ion-item>
+  <ion-title style="text-align:center;">
+    Jornada
+  </ion-title>
+  </ion-item>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let jornada of jornadas">
+  <ion-card-header>
+    <ion-card-subtitle>
+      Jornada {{jornada.numeroJornada+1}}
+    </ion-card-subtitle>
+  </ion-card-header>
+  <ion-card-content>
+    <ion-grid>
+      <ion-row>
+       <ion-col size = "5">Local</ion-col>
+       <ion-col size = "2">:</ion-col>
+       <ion-col size = "5">Visitante</ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-grid>
+      <ion-row>
+       <ion-col size = "5">{{jornada.local.nombre}}</ion-col>
+       <ion-col size = "2">{{jornada.golesLocal}}:{{jornada.golesVisitante}}</ion-col>
+       <ion-col size = "5">{{jornada.visitante.nombre}}</ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card-content>
+  </ion-card>
+</ion-content>
+
+<ion-footer>
+  <ion-button color="dark" (click)="pasarJornada()" style="margin-left: 40px;">
+    Siguiente Jornada
+  </ion-button>
+</ion-footer>
